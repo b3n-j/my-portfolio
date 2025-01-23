@@ -132,3 +132,35 @@ export const signOutAction = async () => {
   await supabase.auth.signOut();
   return redirect("/sign-in");
 };
+
+export async function sendContactMessage(formData: FormData) {
+  const email = formData.get("email")?.toString();
+  const name = formData.get("name")?.toString();
+  const message = formData.get("message")?.toString();
+
+  if (!email || !name || !message) {
+    return encodedRedirect(
+      "error",
+      "/#contact",
+      "Tous les champs sont requis"
+    );
+  }
+
+  try {
+    // Ici vous pouvez implémenter l'envoi réel du message
+    // Par exemple via un service d'email ou en sauvegardant dans Supabase
+    
+    return encodedRedirect(
+      "success",
+      "/#contact",
+      "Message envoyé avec succès"
+    );
+  } catch (error) {
+    console.error(error);
+    return encodedRedirect(
+      "error",
+      "/#contact",
+      "Une erreur est survenue lors de l'envoi du message"
+    );
+  }
+}
