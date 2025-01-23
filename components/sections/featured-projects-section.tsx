@@ -1,8 +1,9 @@
 import { Card } from "../ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 
 const featuredProjects = [
   {
@@ -16,7 +17,7 @@ const featuredProjects = [
 
 export function FeaturedProjectsSection() {
   return (
-    <section className="py-12">
+    <Section id="projects" className="py-12">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold">Projets récents</h2>
         <Button variant="outline" asChild>
@@ -51,6 +52,6 @@ export function FeaturedProjectsSection() {
           </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 } 

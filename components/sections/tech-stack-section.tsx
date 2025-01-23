@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 
 const technologies = [
   {
@@ -22,7 +23,7 @@ const technologies = [
 
 export function TechStackSection() {
   return (
-    <section className="py-12">
+    <Section id="tech" className="py-12">
       <h2 className="text-2xl font-bold mb-8">Technologies</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {technologies.map((tech) => (
@@ -38,6 +39,6 @@ export function TechStackSection() {
           </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 } 

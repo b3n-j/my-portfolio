@@ -5,10 +5,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send } from "lucide-react";
 import { sendContactMessage } from "@/app/actions";
 import { FormMessage } from "@/components/form-message";
+import { Section } from "@/components/ui/section";
 
 export function ContactSection({ searchParams }: { searchParams?: any }) {
   return (
-    <section className="py-12" id="contact">
+    <Section id="contact" className="py-12">
       <h2 className="text-2xl font-bold mb-8">Contact</h2>
       <Card className="max-w-2xl mx-auto">
         <div className="p-6">
@@ -67,6 +68,6 @@ export function ContactSection({ searchParams }: { searchParams?: any }) {
           </form>
         </div>
       </Card>
-    </section>
+    </Section>
   );
 } 

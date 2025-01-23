@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 
 const experiences = [
   {
@@ -18,7 +19,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section className="py-12">
+    <Section id="experience" className="py-12">
       <h2 className="text-2xl font-bold mb-8">Expérience Professionnelle</h2>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
@@ -46,6 +47,6 @@ export function ExperienceSection() {
           </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 } 

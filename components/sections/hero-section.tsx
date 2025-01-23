@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="flex flex-col gap-8 py-12 md:py-24">
+    <Section id="hero" className="flex flex-col gap-8 py-12 md:py-24">
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Ingénieur en développement logiciel
+          I build things for the web
         </h1>
         <p className="text-xl text-muted-foreground">
           Développeur web/mobile full stack passionné par la création d'applications performantes et innovantes.
@@ -31,6 +32,6 @@ export function HeroSection() {
           <Link href="/projects">Voir mes projets</Link>
         </Button>
       </div>
-    </section>
+    </Section>
   );
 } 

@@ -1,5 +1,6 @@
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { Section } from "@/components/ui/section";
 
 const socials = [
   {
@@ -21,7 +22,7 @@ const socials = [
 
 export function SocialSection() {
   return (
-    <section className="py-12">
+    <Section id="social" className="py-12">
       <h2 className="text-2xl font-bold mb-8">Me suivre</h2>
       <div className="flex gap-4">
         {socials.map((social) => (
@@ -44,6 +45,6 @@ export function SocialSection() {
           </Button>
         ))}
       </div>
-    </section>
+    </Section>
   );
 } 

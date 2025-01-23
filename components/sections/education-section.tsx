@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 
 const education = [
   {
@@ -28,7 +29,7 @@ const education = [
 
 export function EducationSection() {
   return (
-    <section className="py-12">
+    <Section id="education" className="py-12">
       <h2 className="text-2xl font-bold mb-8">Formation</h2>
       <div className="space-y-6">
         {education.map((edu, index) => (
@@ -49,6 +50,6 @@ export function EducationSection() {
           </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 } 
