@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <Section id="hero" className="flex flex-col gap-8 py-12 md:py-24">
+    <Section id="hero" className="flex flex-col gap-8 py-8 md:py-16">
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
           I build things for the web

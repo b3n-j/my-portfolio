@@ -22,7 +22,7 @@ const socials = [
 
 export function SocialSection() {
   return (
-    <Section id="social" className="py-12">
+    <Section id="social" className="py-8">
       <h2 className="text-2xl font-bold mb-8">Me suivre</h2>
       <div className="flex gap-4">
         {socials.map((social) => (

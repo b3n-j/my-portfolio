@@ -23,7 +23,7 @@ const technologies = [
 
 export function TechStackSection() {
   return (
-    <Section id="tech" className="py-12">
+    <Section id="tech" className="py-8">
       <h2 className="text-2xl font-bold mb-8">Technologies</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {technologies.map((tech) => (

@@ -17,7 +17,7 @@ const featuredProjects = [
 
 export function FeaturedProjectsSection() {
   return (
-    <Section id="projects" className="py-12">
+    <Section id="projects" className="py-8">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold">Projets récents</h2>
         <Button variant="outline" asChild>

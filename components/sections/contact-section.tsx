@@ -9,7 +9,7 @@ import { Section } from "@/components/ui/section";
 
 export function ContactSection({ searchParams }: { searchParams?: any }) {
   return (
-    <Section id="contact" className="py-12">
+    <Section id="contact" className="py-8">
       <h2 className="text-2xl font-bold mb-8">Contact</h2>
       <Card className="max-w-2xl mx-auto">
         <div className="p-6">

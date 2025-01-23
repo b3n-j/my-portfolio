@@ -19,7 +19,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <Section id="experience" className="py-12">
+    <Section id="experience" className="py-8">
       <h2 className="text-2xl font-bold mb-8">Expérience Professionnelle</h2>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
