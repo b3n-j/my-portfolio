@@ -1,16 +1,19 @@
-import Hero from "@/components/hero";
-import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
-import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
+import { HeroSection } from "@/components/sections/hero-section";
+import { TechStackSection } from "@/components/sections/tech-stack-section";
+import { FeaturedProjectsSection } from "@/components/sections/featured-projects-section";
+import { ExperienceSection } from "@/components/sections/experience-section";
+import { EducationSection } from "@/components/sections/education-section";
+import { SocialSection } from "@/components/sections/social-section";
 
-export default async function Home() {
+export default function Home() {
   return (
-    <>
-      <Hero />
-      <main className="flex-1 flex flex-col gap-6 px-4">
-        <h2 className="font-medium text-xl mb-4">Next steps</h2>
-        {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-      </main>
-    </>
+    <main className="container mx-auto px-4">
+      <HeroSection />
+      <ExperienceSection />
+      <FeaturedProjectsSection />
+      <EducationSection />
+      <TechStackSection />
+      <SocialSection />
+    </main>
   );
 }
