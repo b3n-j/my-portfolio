@@ -1,11 +1,11 @@
-import { HeroSection } from "@/components/sections/hero-section";
-import { TechStackSection } from "@/components/sections/tech-stack-section";
-import { FeaturedProjectsSection } from "@/components/sections/featured-projects-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
-import { EducationSection } from "@/components/sections/education-section";
-import { SocialSection } from "@/components/sections/social-section";
-import { ContactSection } from "@/components/sections/contact-section";
-import { SectionNav } from "@/components/navigation/section-nav";
+import { HeroSection } from "@/app/_components/widgets/home/hero-section";
+import { TechStackSection } from "@/app/_components/widgets/tech-stack-section";
+import { FeaturedProjectsSection } from "@/app/_components/widgets/home/featured-projects-section";
+import { ExperienceSection } from "@/app/_components/widgets/home/experience-section";
+import { EducationSection } from "@/app/_components/widgets/home/education-section";
+import { SocialSection } from "@/app/_components/widgets/home/social-section";
+import { ContactSection } from "@/app/_components/widgets/home/contact-section";
+import { SectionNav } from "@/app/_components/layout/section-nav";
 
 export default function Home() {
   return (
