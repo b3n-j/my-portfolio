@@ -4,18 +4,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/ui/section";
+import { createClient } from '@/utils/supabase/client';
 
-const featuredProjects = [
-  {
-    title: "Projet 1",
-    description: "Description courte du projet 1",
-    image: "/projects/project1.png",
-    technologies: ["React", "Next.js", "Tailwind"],
-    slug: "projet-1",
-  },
-];
+export async function FeaturedProjectsSection() {
 
-export function FeaturedProjectsSection() {
+  const supabase = await createClient();
+  
+  const { data: projects } = await supabase.from("projects").select();
+
+
   return (
     <Section id="projects" className="py-8">
       <div className="flex justify-between items-center mb-8">
@@ -26,22 +23,27 @@ export function FeaturedProjectsSection() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {featuredProjects.map((project) => (
+        {projects?.map((project) => (
           <Card key={project.title} className="overflow-hidden">
             <Link href={`/projects/${project.slug}`}>
               <div className="relative h-48">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
+                { 
+                  project?.image ?
+                    <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                :
+                <div className="h-48 bg-gray-200 animate-pulse"></div>
+                }
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-4">{project.short_description}</p>
                 <div className="flex gap-2">
-                  {project.technologies.map((tech) => (
+                  {project && project.technologies && project.technologies?.map((tech) => (
                     <Badge key={tech} variant="secondary">
                       {tech}
                     </Badge>
