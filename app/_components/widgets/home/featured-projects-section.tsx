@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/app/_components/ui/button";
 import { Badge } from "@/app/_components/ui/badge";
 import { Section } from "@/app/_components/layout/section";
-import { createClient } from '@/app/_utils/supabase/client';
+import { createClient } from '@/app/_utils/supabase/server';
 
 export async function FeaturedProjectsSection() {
   const supabase = await createClient();  

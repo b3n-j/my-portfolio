@@ -3,11 +3,9 @@ import { Card } from "@/app/_components/ui/card";
 import { Input } from "@/app/_components/ui/input";
 import { Textarea } from "@/app/_components/ui/textarea";
 import { Mail, Send } from "lucide-react";
-import { sendContactMessage } from "@/app/actions";
-import { FormMessage } from "@/app/_components/form-message";
 import { Section } from "@/app/_components/layout/section";
 
-export function ContactSection({ searchParams }: { searchParams?: any }) {
+export function ContactSection() {
   return (
     <Section id="contact" className="py-8">
       <h2 className="text-2xl font-bold mb-8">Contact</h2>
@@ -20,7 +18,7 @@ export function ContactSection({ searchParams }: { searchParams?: any }) {
             </p>
           </div>
           
-          <form action={sendContactMessage} className="space-y-6">
+          <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
@@ -64,7 +62,6 @@ export function ContactSection({ searchParams }: { searchParams?: any }) {
               <Send className="h-4 w-4 mr-2" />
               Envoyer le message
             </Button>
-            {searchParams && <FormMessage message={searchParams} />}
           </form>
         </div>
       </Card>
