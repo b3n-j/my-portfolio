@@ -1,11 +1,11 @@
-
-import { Geist } from "next/font/google";
+import { Footer } from "@/app/_components/layout/footer";
+import { Header } from "@/app/_components/layout/header";
+import { APP_DESCRIPTION, APP_TITLE } from "@/app/_constants/config";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "next-themes";
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Geist } from "next/font/google";
+import React from "react";
 import "./globals.css";
-import { APP_TITLE, APP_DESCRIPTION } from "@/app/_constants/config";
-import { Footer } from "./_components/layout/footer";
-import { Header } from "./_components/layout/header";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -36,15 +36,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
           <main className="min-h-screen flex flex-col items-center">
             <div className="flex-1 w-full flex flex-col gap-20 items-center">
-              
+              <Header />
               <div className="flex flex-col gap-20 max-w-5xl p-5">
                 {children}
                 <SpeedInsights />
               </div>
-             <Footer />
+              <Footer />
             </div>
           </main>
         </ThemeProvider>

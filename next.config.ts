@@ -1,10 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Config options here */
+
+  /* Authorized domains to fetch images from Supabase */
   images: {
-    domains: ['hfvazyqdtrydsgylnvwq.supabase.co'],
-  },
+    domains: ['hfvazyqdtrydsgylnvwq.supabase.co']
+  }
 };
 
 export default nextConfig;

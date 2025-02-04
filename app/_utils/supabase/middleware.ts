@@ -1,5 +1,5 @@
-import { createServerClient } from "@supabase/ssr";
-import { type NextRequest, NextResponse } from "next/server";
+import { createServerClient } from '@supabase/ssr';
+import { NextResponse, type NextRequest } from 'next/server';
 
 export const updateSession = async (request: NextRequest) => {
   // This `try/catch` block is only here for the interactive tutorial.
@@ -8,8 +8,8 @@ export const updateSession = async (request: NextRequest) => {
     // Create an unmodified response
     let response = NextResponse.next({
       request: {
-        headers: request.headers,
-      },
+        headers: request.headers
+      }
     });
 
     const supabase = createServerClient(
@@ -21,18 +21,16 @@ export const updateSession = async (request: NextRequest) => {
             return request.cookies.getAll();
           },
           setAll(cookiesToSet) {
-            cookiesToSet.forEach(({ name, value }) =>
-              request.cookies.set(name, value),
-            );
+            cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
             response = NextResponse.next({
-              request,
+              request
             });
             cookiesToSet.forEach(({ name, value, options }) =>
-              response.cookies.set(name, value, options),
+              response.cookies.set(name, value, options)
             );
-          },
-        },
-      },
+          }
+        }
+      }
     );
 
     // This will refresh session if expired - required for Server Components
@@ -40,23 +38,26 @@ export const updateSession = async (request: NextRequest) => {
     const user = await supabase.auth.getUser();
 
     // protected routes
-    if (request.nextUrl.pathname.startsWith("/protected") && user.error) {
-      return NextResponse.redirect(new URL("/sign-in", request.url));
+    if (request.nextUrl.pathname.startsWith('/protected') && user.error) {
+      return NextResponse.redirect(new URL('/sign-in', request.url));
     }
 
-    if (request.nextUrl.pathname === "/" && !user.error) {
-      return NextResponse.redirect(new URL("/protected", request.url));
+    if (request.nextUrl.pathname === '/' && !user.error) {
+      return NextResponse.redirect(new URL('/protected', request.url));
     }
 
     return response;
-  } catch (e) {
+  } catch (
+    // eslint-disable-next-line no-unused-vars
+    e
+  ) {
     // If you are here, a Supabase client could not be created!
     // This is likely because you have not set up environment variables.
     // Check out http://localhost:3000 for Next Steps.
     return NextResponse.next({
       request: {
-        headers: request.headers,
-      },
+        headers: request.headers
+      }
     });
   }
 };
